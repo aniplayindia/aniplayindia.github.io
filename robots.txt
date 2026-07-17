@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block search engine bots from crawling private user routes
+Disallow: /profile/
+Disallow: /mylist/
+Disallow: /history/
+
+# Block search result pages to save crawl budget
+Disallow: /search
+Disallow: /*?q=*
+
+# Point to your sitemap
+Sitemap: https://aniplay.qzz.io/sitemap.xml

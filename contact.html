@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#6A00FF">
+  
+  <title>Contact Us | AniPlay</title>
+
+  <!-- Professional SEO Optimization -->
+  <meta name="description" content="Get in touch with the AniPlay team. We are here to help with support, feedback, partnership inquiries, and streaming issues.">
+  <meta name="keywords" content="AniPlay contact, AniPlay support, anime help, report issues, partner with AniPlay">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="AniPlay">
+  
+  <link rel="canonical" href="https://aniplay.qzz.io/contact">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AniPlay">
+  <meta property="og:title" content="Contact Us | AniPlay">
+  <meta property="og:description" content="Need help or want to partner with us? Reach out to the AniPlay team today.">
+  <meta property="og:url" content="https://aniplay.qzz.io/contact">
+  <meta property="og:image" content="https://aniplay.qzz.io/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Us | AniPlay">
+  <meta name="twitter:description" content="Need help or want to partner with us? Reach out to the AniPlay team today.">
+  <meta name="twitter:image" content="https://aniplay.qzz.io/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logo.png">
+
+  <!-- Core Web Vitals Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" as="style" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS Integration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { blue: '#007AFF', purple: '#6A00FF', pink: '#FF2D95' },
+            slate: { 50: '#f8fafc', 800: '#1e293b', 900: '#0f172a' }
+          },
+          fontFamily: { sans: ['Poppins', 'sans-serif'] },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        },
+      },
+    }
+  </script>
+
+  <!-- ContactPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact AniPlay",
+    "description": "Contact page for AniPlay support, partnerships, and inquiries.",
+    "url": "https://aniplay.qzz.io/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "AniPlay",
+      "email": "support@aniplay.qzz.io",
+      "sameAs": [
+        "https://www.youtube.com/@Aniplay-app"
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    /* Custom Scrollbar for Textarea */
+    textarea::-webkit-scrollbar { width: 8px; }
+    textarea::-webkit-scrollbar-track { background: transparent; }
+    textarea::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    .dark textarea::-webkit-scrollbar-thumb { background: #475569; }
+
+    /* Social Icons specific hover colors */
+    .social-icon-wa:hover { background-color: #25D366; color: white !important; }
+    .social-icon-ig:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white !important; }
+    .social-icon-tg:hover { background-color: #0088cc; color: white !important; }
+    
+    select option { background-color: #18181b; color: white; }
+    html:not(.dark) select option { background-color: white; color: black; }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-brand-purple selection:text-white flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 dark:bg-[#09090b]/90 backdrop-blur-lg border-b border-slate-200 dark:border-white/10 transition-all duration-300">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex justify-between items-center h-16">
+        <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <img src="/app.png" alt="AniPlay Logo" class="h-8 rounded" onerror="this.outerHTML='<span class=\'font-bold text-xl text-brand-purple\'>AniPlay</span>'">
+        </a>
+        <div class="flex items-center gap-4">
+          <button id="theme-toggle" class="text-slate-500 hover:text-brand-purple transition-colors text-lg" aria-label="Toggle Theme">
+            <i class="fas fa-moon"></i>
+          </button>
+          <a href="/" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-pink transition-colors bg-slate-100 dark:bg-white/5 px-4 py-2 rounded-full">
+            <i class="fas fa-arrow-left mr-1"></i> Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow mx-auto max-w-6xl px-4 py-12 md:py-20 w-full">
+    
+    <!-- Hero / Title -->
+    <div class="text-center mb-16 opacity-0 animate-fade-in-up">
+      <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-brand-blue via-brand-purple to-brand-pink -webkit-background-clip-text text-transparent bg-clip-text inline-block mb-4">
+        Get in Touch
+      </h1>
+      <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed text-lg">
+        Have a question, feedback, or a business inquiry? Fill out the form below or reach out to us directly. We'd love to hear from you.
+      </p>
+    </div>
+
+    <!-- Contact Container (Split Layout) -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-start opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+      
+      <!-- Left Column: Contact Info -->
+      <div class="md:col-span-2 space-y-8">
+        
+        <!-- Info Card -->
+        <div class="bg-white dark:bg-[#18181b] p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+          <div class="absolute right-0 top-0 w-32 h-32 bg-brand-purple/10 rounded-full blur-3xl pointer-events-none group-hover:bg-brand-pink/20 transition-colors duration-500"></div>
+          
+          <h3 class="text-2xl font-bold mb-6 text-slate-900 dark:text-white">Contact Info</h3>
+          
+          <div class="space-y-6">
+            <!-- Email -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue flex-shrink-0 mt-1">
+                <i class="fas fa-envelope text-lg"></i>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Email Us</p>
+                <a href="mailto:support@aniplay.qzz.io" class="text-base font-medium text-slate-900 dark:text-slate-100 hover:text-brand-purple transition-colors">support@aniplay.qzz.io</a>
+              </div>
+            </div>
+
+            <!-- Response Time -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-pink flex-shrink-0 mt-1">
+                <i class="fas fa-clock text-lg"></i>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Response Time</p>
+                <p class="text-base font-medium text-slate-900 dark:text-slate-100">Within 24-48 Hours</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="mt-10 pt-8 border-t border-slate-200 dark:border-white/10">
+            <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">Follow & Connect</p>
+            <div class="flex gap-4">
+              <!-- WhatsApp -->
+              <a href="#" class="social-icon-wa w-12 h-12 rounded-full bg-slate-100 dark:bg-[#27272a] flex items-center justify-center text-xl text-slate-600 dark:text-slate-300 transition-all duration-300 shadow-sm hover:shadow-lg transform hover:-translate-y-1" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <!-- Telegram -->
+              <a href="#" class="social-icon-tg w-12 h-12 rounded-full bg-slate-100 dark:bg-[#27272a] flex items-center justify-center text-xl text-slate-600 dark:text-slate-300 transition-all duration-300 shadow-sm hover:shadow-lg transform hover:-translate-y-1" aria-label="Telegram">
+                <i class="fab fa-telegram-plane ml-[-2px]"></i>
+              </a>
+              <!-- Instagram -->
+              <a href="#" class="social-icon-ig w-12 h-12 rounded-full bg-slate-100 dark:bg-[#27272a] flex items-center justify-center text-xl text-slate-600 dark:text-slate-300 transition-all duration-300 shadow-sm hover:shadow-lg transform hover:-translate-y-1" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Prompt Box -->
+        <a href="/faq" class="block bg-gradient-to-r from-brand-blue to-brand-purple p-6 rounded-3xl shadow-lg hover:shadow-brand-purple/30 transition-all duration-300 transform hover:-translate-y-1 group relative overflow-hidden">
+          <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="flex justify-between items-center text-white relative z-10">
+            <div>
+              <h4 class="font-bold text-lg mb-1">Looking for answers?</h4>
+              <p class="text-white/80 text-sm">Check our FAQ page first.</p>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:bg-white group-hover:text-brand-purple transition-colors">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Right Column: Form -->
+      <div class="md:col-span-3">
+        <div class="bg-white dark:bg-[#18181b] p-8 md:p-10 rounded-3xl shadow-sm border border-slate-200 dark:border-white/10">
+          <h3 class="text-2xl font-bold mb-2 text-slate-900 dark:text-white">Send a Message</h3>
+          <p class="text-slate-500 dark:text-slate-400 mb-8 text-sm">Fill out the form below and our team will get back to you as soon as possible.</p>
+          
+          <form id="contact-form" class="space-y-5">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <!-- Name -->
+              <div>
+                <label for="name" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Your Name</label>
+                <input type="text" id="name" required placeholder="John Doe" 
+                  class="w-full bg-slate-50 dark:bg-[#27272a] border-2 border-slate-200 dark:border-transparent focus:border-brand-purple dark:focus:border-brand-purple text-slate-900 dark:text-white rounded-xl px-4 py-3.5 outline-none transition-colors duration-300 placeholder-slate-400 dark:placeholder-slate-500">
+              </div>
+              
+              <!-- Email -->
+              <div>
+                <label for="email" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email Address</label>
+                <input type="email" id="email" required placeholder="john@example.com" 
+                  class="w-full bg-slate-50 dark:bg-[#27272a] border-2 border-slate-200 dark:border-transparent focus:border-brand-purple dark:focus:border-brand-purple text-slate-900 dark:text-white rounded-xl px-4 py-3.5 outline-none transition-colors duration-300 placeholder-slate-400 dark:placeholder-slate-500">
+              </div>
+            </div>
+
+            <!-- Subject Select -->
+            <div>
+              <label for="subject" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Subject</label>
+              <div class="relative">
+                <select id="subject" required 
+                  class="w-full bg-slate-50 dark:bg-[#27272a] border-2 border-slate-200 dark:border-transparent focus:border-brand-purple dark:focus:border-brand-purple text-slate-900 dark:text-white rounded-xl px-4 py-3.5 outline-none transition-colors duration-300 appearance-none cursor-pointer">
+                  <option value="" disabled selected>Select a topic...</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="technical">Technical Support / Bug Report</option>
+                  <option value="content">Content Request / Missing Anime</option>
+                  <option value="dmca">Copyright / DMCA</option>
+                  <option value="business">Business / Partnership</option>
+                </select>
+                <i class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+              </div>
+            </div>
+
+            <!-- Message Textarea -->
+            <div>
+              <label for="message" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Message</label>
+              <textarea id="message" rows="5" required placeholder="How can we help you?" 
+                class="w-full bg-slate-50 dark:bg-[#27272a] border-2 border-slate-200 dark:border-transparent focus:border-brand-purple dark:focus:border-brand-purple text-slate-900 dark:text-white rounded-xl px-4 py-3.5 outline-none transition-colors duration-300 placeholder-slate-400 dark:placeholder-slate-500 resize-none"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submit-btn" 
+              class="w-full bg-gradient-to-r from-brand-blue via-brand-purple to-brand-pink hover:opacity-90 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-brand-purple/30 flex justify-center items-center gap-2 group transform active:scale-[0.98]">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+            </button>
+
+          </form>
+
+          <!-- Success Message State (Hidden initially) -->
+          <div id="success-state" class="hidden flex-col items-center justify-center py-10 text-center animate-fade-in-up">
+            <div class="w-20 h-20 bg-green-100 dark:bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-4xl mb-6 shadow-inner">
+              <i class="fas fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Message Sent Successfully!</h3>
+            <p class="text-slate-500 dark:text-slate-400 max-w-sm">Thank you for reaching out to AniPlay. We have received your message and will get back to you shortly.</p>
+            <button id="reset-btn" class="mt-8 px-6 py-2 bg-slate-100 dark:bg-[#27272a] text-slate-700 dark:text-slate-300 hover:text-brand-purple dark:hover:text-brand-purple font-semibold rounded-full transition-colors">
+              Send another message
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-100 dark:bg-[#050505] mt-auto border-t border-slate-200 dark:border-white/10 transition-colors duration-300">
+    <div class="mx-auto max-w-6xl px-4 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-slate-500 dark:text-slate-400">
+        &copy; 2026 AniPlay. All rights reserved.
+      </p>
+      <div class="flex gap-6">
+        <a href="/privacy" class="text-sm text-slate-500 hover:text-brand-purple transition-colors">Privacy Policy</a>
+        <a href="/terms" class="text-sm text-slate-500 hover:text-brand-purple transition-colors">Terms of Service</a>
+        <a href="/faq" class="text-sm text-slate-500 hover:text-brand-purple transition-colors">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // Theme Toggle Logic
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const themeIcon = themeToggleBtn.querySelector('i');
+      
+      // Check local storage for theme preference
+      const currentTheme = localStorage.getItem('appTheme') || 'dark';
+      if (currentTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('appTheme', isDark ? 'dark' : 'light');
+        
+        if (isDark) {
+          themeIcon.classList.remove('fa-sun');
+          themeIcon.classList.add('fa-moon');
+        } else {
+          themeIcon.classList.remove('fa-moon');
+          themeIcon.classList.add('fa-sun');
+        }
+      });
+
+      // Form Submission Logic
+      const contactForm = document.getElementById('contact-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const successState = document.getElementById('success-state');
+      const resetBtn = document.getElementById('reset-btn');
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // UI Feedback: Change button to loading state
+        const originalBtnContent = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin text-xl"></i><span>Sending...</span>';
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
+        // Simulate API network request (1.5 seconds)
+        setTimeout(() => {
+          contactForm.classList.add('hidden');
+          successState.classList.remove('hidden');
+          successState.classList.add('flex');
+          
+          // Reset button state silently in background
+          submitBtn.innerHTML = originalBtnContent;
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+          contactForm.reset();
+        }, 1500);
+      });
+
+      // Reset Form UI
+      resetBtn.addEventListener('click', () => {
+        successState.classList.add('hidden');
+        successState.classList.remove('flex');
+        contactForm.classList.remove('hidden');
+      });
+
+    });
+  </script>
+</body>
+</html>

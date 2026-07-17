@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Aniplay - Masterpiece UI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* 
+      NEW GRADIENT: Matches the Blue -> Pink/Magenta logo 
+      Direction: 135deg (Top Left/Left to Bottom Right)
+    */
+    --logo-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 40%, #d53369 100%);
+    
+    /* Secondary glow color (Blue from the logo) */
+    --accent-glow: rgba(0, 198, 255, 0.6); 
+    
+    /* Pink accent for borders */
+    --accent-pink: #d53369;
+
+    --bg-dark: #0a0a0a;
+    --card-bg: #141414;
+    --text-light: #ffffff;
+    --text-gray: #a0a0a0;
+    --font-primary: 'Poppins', sans-serif;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; font-family: var(--font-primary); }
+
+  body {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+  }
+
+  /* Background Texture: Subtle Blue/Pink mesh */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(0, 198, 255, 0.08), transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(213, 51, 105, 0.08), transparent 40%);
+    z-index: -1;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+  }
+
+  /* --- TYPOGRAPHY --- */
+  h1, h2, h3 {
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  /* THE LOGO GRADIENT TEXT CLASS */
+  .logo-text {
+    background: var(--logo-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Adds a slight drop shadow to mimic the 3D button feel */
+    filter: drop-shadow(0px 5px 10px rgba(0, 114, 255, 0.3));
+    display: inline-block;
+  }
+
+  .header-section {
+    text-align: center;
+    margin-bottom: 100px;
+    padding-top: 40px;
+  }
+
+  .header-section h1 {
+    font-size: 4.5rem; /* Big and Bold */
+    margin-bottom: 15px;
+  }
+
+  .header-section p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* --- SCROLL ANIMATION --- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* --- IMAGES GENERAL STYLE --- */
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.5s ease;
+  }
+
+  .img-wrapper {
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    /* Border gradient trick */
+    position: relative;
+    padding: 1px; 
+    background: linear-gradient(135deg, rgba(0,198,255,0.3), rgba(213,51,105,0.3));
+  }
+  
+  /* Inner content div for wrapper to handle the image */
+  .img-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .img-wrapper:hover img {
+    transform: scale(1.05);
+  }
+
+  /* --- SECTION 1 & 2: ZIG ZAG --- */
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 120px;
+  }
+
+  .row.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .col-text {
+    flex: 1;
+  }
+  .col-img {
+    flex: 1;
+    height: 400px;
+  }
+
+  .col-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  /* Underline animation matching logo colors */
+  .col-text h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    background: var(--logo-gradient);
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+
+  .col-text p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  /* --- SECTION 3: BENTO GRID (Images 3 & 4) --- */
+  .grid-section {
+    margin-bottom: 120px;
+  }
+  
+  .bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 25px;
+  }
+
+  .bento-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Glowing hover effect */
+  .bento-card:hover {
+    background: #1a1a1a;
+    border-color: rgba(0, 198, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.1);
+  }
+
+  .bento-card h3 {
+    font-size: 1.8rem;
+    background: var(--logo-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+
+  /* --- SECTION 4: CINEMATIC WIDE (Image 5) --- */
+  .cinematic-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 120px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .overlay-text {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 2;
+    background: rgba(0,0,0,0.6); /* Glass effect */
+    backdrop-filter: blur(10px);
+    padding: 25px 35px;
+    border-radius: 16px;
+    border-left: 5px solid var(--accent-pink); /* Pink accent */
+  }
+
+  /* --- SECTION 5: DEVELOPER (Image 6) --- */
+  .dev-section {
+    background: linear-gradient(145deg, #161616, #0f0f0f);
+    padding: 60px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+
+  .dev-img-box {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    padding: 5px;
+    /* Circle gradient border */
+    background: var(--logo-gradient);
+  }
+  
+  .dev-img-box img {
+    border-radius: 50%;
+    border: 4px solid #161616; /* Matches bg */
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background: var(--logo-gradient);
+    color: white;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 114, 255, 0.4);
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(213, 51, 105, 0.5); /* Pink glow on hover */
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 900px) {
+    .header-section h1 { font-size: 3rem; }
+    .row { flex-direction: column !important; text-align: center; gap: 30px; }
+    .col-text h2::after { margin: 10px auto; }
+    .col-img { width: 100%; height: 300px; }
+    
+    .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .bento-card { min-height: 250px; }
+    .grid-img-box { height: 300px; }
+    
+    .dev-section { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header-section reveal">
+    <!-- APPLIED LOGO TEXTURE HERE -->
+    <h1><span class="logo-text">Aniplay Universe</span></h1>
+    <p>The Masterpiece UI Experience. Free. Unlimited. Beautiful.</p>
+  </div>
+
+  <!-- 1. INTRO ROW (Image 1) -->
+  <div class="row reveal">
+    <div class="col-text">
+      <h2>A New Era of Streaming</h2>
+      <p>Aniplay was born from a simple frustration: Anime sites were ugly, slow, and filled with ads. We changed that.</p>
+      <p>Inspired by the artistic brilliance of <em>Your Name</em>, we crafted a platform that feels as good as the anime you watch. Smooth animations, dark mode by default, and a focus on pure entertainment.</p>
+    </div>
+    <div class="col-img img-wrapper">
+      <div class="img-inner">
+        <!-- IMAGE 1 -->
+        <img src="mitsuha.png" alt="Mitsuha Art">
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MISSION ROW (Image 2) -->
+  <div class="row reverse reveal">
+    <div class="col-text">
+      <h2>The "Free Forever" Promise</h2>
+      <p>We believe art shouldn't be gatekept behind paywalls. Whether you are a student or a working professional, Aniplay ensures you have access to the world's largest library.</p>
+      <p>No subscriptions. No hidden fees. Just click and play. That is our promise to the global anime community.</p>
+    </div>
+    <div class="col-img img-wrapper">
+      <div class="img-inner">
+        <!-- IMAGE 2 -->
+        <img src="chizuru.png" alt="Chizuru Art">
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. FEATURES GRID (Images 3 & 4) -->
+  <div class="grid-section reveal">
+    <div class="bento-grid">
+      
+      <!-- Text Block -->
+      <div class="bento-card">
+        <h3>Zero Lag Technology</h3>
+        <p style="color: #ccc; margin-top: 10px;">Our servers are optimized for speed. Skip the buffering and dive straight into 1080p action immediately.</p>
+      </div>
+
+      <!-- IMAGE 3 -->
+      <div class="img-wrapper grid-img-box">
+        <div class="img-inner">
+          <img src="makima.png" alt="Action Anime">
+        </div>
+      </div>
+
+      <!-- IMAGE 4 -->
+      <div class="img-wrapper grid-img-box">
+        <div class="img-inner">
+          <img src="hinata.png" alt="Scenic Anime">
+        </div>
+      </div>
+
+      <!-- Text Block -->
+      <div class="bento-card">
+        <h3>Community First</h3>
+        <p style="color: #ccc; margin-top: 10px;">We listen to you. The "Masterpiece UI" is constantly evolving based on user feedback and requests.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 4. CINEMATIC BANNER (Image 5) -->
+  <div class="cinematic-section reveal">
+    <!-- IMAGE 5 -->
+    <img src="reze.png" alt="Cinematic Background" style="opacity: 0.9;">
+    <div class="overlay-text">
+      <h2 style="color:white;">Experience the Immersion</h2>
+      <p style="color: #ddd;">Every frame matters.</p>
+    </div>
+  </div>
+
+  <!-- 5. DEVELOPER SECTION (Image 6) -->
+  <div class="dev-section reveal">
+    <div class="dev-img-box">
+      <!-- IMAGE 6 (Avatar) -->
+      <img src="https://files.catbox.moe/pgnazq.png" alt="Developer Avatar">
+    </div>
+    <div>
+      <h2>Meet the Creator</h2>
+      <p style="color: #ccc; margin: 15px 0;">
+        <strong>Krishna Kanhaiya</strong> built Aniplay single-handedly with a passion for code and storytelling. The goal was simple: create the site he always wanted to use himself.
+      </p>
+      <p style="color: #aaa; font-size: 0.9rem;">
+        Running high-speed servers isn't free. If you enjoy the Aniplay experience, consider supporting the development.
+      </p>
+      <!-- BUTTON WITH GRADIENT -->
+      <a href="#" class="btn">Donate & Support</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Smooth Scroll Reveal
+  const reveals = document.querySelectorAll('.reveal');
+
+  function checkScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+    
+    reveals.forEach(box => {
+      const boxTop = box.getBoundingClientRect().top;
+      if(boxTop < triggerBottom) {
+        box.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkScroll);
+  checkScroll(); // Trigger once on load
+</script>
+
+</body>
+</html>
